@@ -1,7 +1,7 @@
 {
   "workflow": {
     "phases": {
-      "brainstorm": "complete",
+      "brainstorm": "pending",
       "plan": "pending",
       "execute": "active",
       "verify": "pending",
