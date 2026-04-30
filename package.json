@@ -1,0 +1,32 @@
+{
+  "name": "pi-task-cli-extension",
+  "version": "0.1.0",
+  "description": "PI extension that integrates task-cli for task management",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "pi-package",
+    "task",
+    "cli",
+    "extension"
+  ],
+  "pi": {
+    "skills": ["skills"]
+  },
+  "dependencies": {
+    "task-cli": "git:github.com/svystunov/task-cli.git"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-agent-core": "*",
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
