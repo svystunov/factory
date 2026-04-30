@@ -3,9 +3,22 @@ import { spawn } from "child_process";
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { exec } from "child_process";
+import { promisify } from "util";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const execAsync = promisify(exec);
+
+// Check if task-cli is available
+async function checkTaskCliAvailable(): Promise<boolean> {
+  try {
+    await execAsync("which task");
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 export const taskCliExtension: Extension = {
   name: "task-cli",
@@ -26,6 +39,15 @@ export const taskCliExtension: Extension = {
         },
       ],
       execute: async (args: string[]) => {
+        // Check if task-cli is available
+        const isAvailable = await checkTaskCliAvailable();
+        if (!isAvailable) {
+          return {
+            success: false,
+            message: "task-cli is not installed. Please install it first with: npm install -g task-cli",
+          };
+        }
+
         try {
           const projectRoot = process.cwd();
           const taskPath = join(projectRoot, ".task");
