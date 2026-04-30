@@ -3,6 +3,8 @@ name: tasks
 description: "Use this skill to manage tasks using the task-cli tool. Supports creating, listing, editing, assigning, and tracking tasks with comments."
 ---
 
+> **Installation:** Install this pi package with `pi install git:github.com/svystunov/task-cli` or `pi install -l git:github.com/svystunov/task-cli` for project-specific installation.
+
 > **Related skills:** Use `/skill:brainstorming` to plan task management features, then `/skill:writing-plans` for implementation.
 
 # Task Management with task-cli
@@ -74,6 +76,19 @@ task comment add 1 "This is critical for the MVP" --author me
 # Mark task as done
 task done 1
 ```
+
+## PI Integration
+
+When using this skill through PI, you can use natural language to manage tasks:
+
+```
+/task: Create a new task for fixing the login bug
+/task: List all high priority tasks
+/task: Assign task 5 to John
+/task: Add a comment to task 3
+```
+
+PI will translate these commands to the appropriate task-cli commands and execute them.
 
 ## File Structure
 
