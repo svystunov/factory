@@ -18,6 +18,10 @@
     "skills": ["skills"],
     "extensions": ["extensions"]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svystunov/task-cli.git"
+  },
   "dependencies": {
     "task-cli": "git:github.com/svystunov/task-cli.git"
   },
