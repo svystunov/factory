@@ -1,7 +1,7 @@
 {
-  "name": "pi-task-cli",
+  "name": "factory",
   "version": "0.1.0",
-  "description": "PI package that integrates task-cli for task management",
+  "description": "Multi-skill, multi-extension project for PI",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,24 +10,27 @@
   },
   "keywords": [
     "pi-package",
-    "task",
-    "cli",
-    "extension"
+    "pi-extension",
+    "pi-skill"
   ],
   "pi": {
-    "skills": ["skills"],
-    "extensions": ["extensions"]
+    "skills": [
+      "skills"
+    ],
+    "extensions": [
+      "extensions"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/svystunov/factory.git"
   },
   "dependencies": {
-    "task-cli": "git:github.com/svystunov/task-cli.git"
+    "task-cli": "https://github.com/svystunov/task-cli.git"
   },
   "peerDependencies": {
-    "@mariozechner/pi-ai": "*",
     "@mariozechner/pi-agent-core": "*",
+    "@mariozechner/pi-ai": "*",
     "@mariozechner/pi-coding-agent": "*",
     "@mariozechner/pi-tui": "*"
   },
